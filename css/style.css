@@ -1,0 +1,316 @@
+:root {
+  /* === COLORS === */
+  --bg-primary: #050505; /* Fallback фон (очень тёмный) */
+  --bg-card: #131e3a; /* Фон карточек NFT */
+  --bg-card-hover: #1a2a4d; /* Карточка при наведении (чуть светлее) */
+  --accent: #d6ef0e;
+  --accent-hover: #b8cf00;
+  --text-primary: #fff;
+  --text-secondary: rgba(255 255 255/0.72);
+
+  /* === RADIUS === */
+  --radius-sm: 0.5rem; /* 8px  (кнопки) */
+  --radius-md: 1rem; /* 16px (карточки) */
+  --radius-lg: 1.5rem; /* 24px (крупные блоки) */
+
+  /* === SHADOWS & EFFECTS === */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.6);
+  --glow-accent: 0 0 15px rgba(214, 239, 14, 0.3);
+
+  /* === TRANSITIONS === */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+
+  /* === FONTS === */
+  --first-family: "Inter", sans-serif;
+  --second-family: "Canela", sans-serif;
+}
+
+html {
+  font-size: 16 px;
+}
+
+body {
+  background-color: #0a0a0a;
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+  background-position: center;
+  color: var(--text-primary);
+  font-family: var(--first-family);
+}
+
+.container {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Это тест. Стереть после настройки стилей */
+h1 {
+  color: chartreuse;
+}
+
+.button {
+  display: inline-block;
+  font-family: var(--first-family);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 120%;
+  color: #fff;
+  padding: 0.75rem 2.5rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background-color: var(--accent);
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+/* Header */
+
+.header {
+  padding: 1.75rem 0;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__link {
+  font-family: var(--first-family);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 160%;
+  color: rgb(255 255 253 / 0.72);
+  border-bottom: 1px solid rgb(255 255 255 / 0);
+}
+
+.header__link--active {
+  color: #fff;
+  border-bottom-color: var(--accent);
+}
+
+.header__link:hover {
+  color: #fff;
+  border-bottom-color: var(--accent);
+  transition:
+    color var(--transition-normal),
+    border-bottom-color var(--transition-normal);
+}
+
+/* HERO */
+
+.hero {
+  padding: 5.75rem 0;
+}
+
+.hero__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero__content {
+  flex: 0 0 544px;
+  position: relative;
+  z-index: 100;
+}
+
+.hero__media {
+  flex: 0 0 575px;
+  position: relative;
+  z-index: 100;
+}
+
+.hero__title {
+  font-family: var(--second-family);
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin: 0 0 1.25rem 0;
+}
+
+.hero__title-accent {
+  color: var(--accent);
+}
+
+.hero__text {
+  font-family: var(--first-family);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0 0 2.5rem 0;
+}
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  margin-bottom: 4.5rem;
+}
+
+.hero__link {
+  font-family: var(--first-family);
+  font-style: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: color var(--transition-normal);
+}
+
+.hero__link:hover {
+  color: var(--accent-hover);
+}
+
+.hero__stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.hero__stat-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 1.75rem;
+}
+.hero__stat-value {
+  font-family: var(--second-family);
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--accent);
+}
+.hero__stat-value-unit {
+  color: var(--text-primary);
+}
+.hero__stat-label {
+  font-family: var(--first-family);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.hero__stat-item:not(:last-child) {
+  border-right: 1px solid var(--accent);
+}
+
+.hero__media {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 575px;
+  height: 637px;
+}
+
+.hero__media-main {
+  position: relative;
+  z-index: 10;
+  display: block;
+  width: 464px;
+  height: 544px;
+  border-radius: 1.5rem;
+  object-fit: cover;
+}
+.hero__media-badge {
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 172px;
+  height: 172px;
+}
+
+/* Light effect 1 */
+.hero__media::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 57%;
+  left: 10%;
+  width: 640px;
+  height: 460px;
+  background: #1f413d99;
+  filter: blur(400px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Light effect 2 */
+.hero__media::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: -25%;
+  right: -38%;
+  width: 350px;
+  height: 220px;
+  background: #1a2652cc;
+  filter: blur(400px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.hero__media-card {
+  position: absolute;
+  z-index: 30;
+  right: 0;
+  bottom: 0;
+  width: 304px;
+  border-radius: 1rem;
+  background: var(--bg-card);
+  border-top: 1px solid var(--accent);
+  transition: background-color var(--transition-normal);
+
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  box-shadow: 0 9px 50px 0 rgb(23 36 65 / 0.04);
+}
+
+.hero__media-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.hero__media-card-caption {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--accent);
+}
+.hero__media-card-value {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0.5rem;
+}
+
+.button--card {
+  width: 100%;
+  color: var(--accent);
+  border: 1px solid #d6ef0e;
+  background-color: transparent;
+}
