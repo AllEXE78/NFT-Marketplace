@@ -404,13 +404,20 @@ body {
   flex: 0 0 540px;
 }
 
+.weekly-picks__button {
+  white-space: nowrap;
+}
+
 .weekly-picks__grid {
-  display: flex;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
   gap: 1.85rem;
 }
 
 .card {
-  flex: 0 0 410px;
+  /* flex: 0 0 410px; */
   border-radius: 1rem;
   background: var(--bg-card);
   border-top: 1px solid var(--accent);
@@ -445,6 +452,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  gap: 1rem;
 }
 
 .card__title {
@@ -454,6 +462,7 @@ body {
 .card__price {
   font-weight: 700;
   font-size: 1rem;
+  white-space: nowrap;
 }
 
 .card__price::before,
@@ -496,6 +505,7 @@ body {
 .card__time {
   font-size: 1rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .card__time::before {
@@ -507,10 +517,61 @@ body {
   color: var(--accent);
   border: 1px solid var(--accent);
   background-color: transparent;
+  white-space: nowrap;
 }
 
 .card__button:hover {
   transform: scale(1.03); /* Чуть меньше, чем у основной */
   box-shadow: 0 0 12px var(--accent);
   color: var(--text-primary);
+}
+
+@media (max-width: 1100px) {
+  .weekly-picks__grid {
+    grid-template-columns: repeat(2, 410px);
+    justify-content: center;
+  }
+
+  .card:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 410px;
+  }
+}
+
+@media (max-width: 900px) {
+  .weekly-picks__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .weekly-picks__title {
+    text-align: center;
+    flex: 0 0 0;
+  }
+
+  .weekly-picks__button {
+    max-width: 410px;
+    width: 100%;
+  }
+
+  .weekly-picks__grid {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .card {
+    max-width: 410px;
+    width: 100%;
+  }
+
+  .card:nth-child(3) {
+    grid-column: auto;
+    justify-self: auto;
+    width: auto;
+  }
 }
