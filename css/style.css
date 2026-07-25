@@ -7,6 +7,7 @@
   --accent-hover: #b8cf00;
   --text-primary: #fff;
   --text-secondary: rgba(255 255 255/0.72);
+  --text-gray: #838382;
 
   /* === RADIUS === */
   --radius-sm: 0.5rem; /* 8px  (кнопки) */
@@ -72,9 +73,19 @@ body {
   padding: 0 1rem;
 }
 
-/* Это тест. Стереть после настройки стилей */
-h1 {
-  color: chartreuse;
+/* Common blocks */
+
+.section-title {
+  font-family: var(--second-family);
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin: 0 0 1.25rem 0;
+}
+
+.section-title__accent {
+  color: var(--accent);
 }
 
 .button {
@@ -181,16 +192,7 @@ h1 {
 }
 
 .hero__title {
-  font-family: var(--second-family);
   font-size: 4rem;
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--text-primary);
-  margin: 0 0 1.25rem 0;
-}
-
-.hero__title-accent {
-  color: var(--accent);
 }
 
 .hero__text {
@@ -384,5 +386,131 @@ h1 {
 .button--card:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+  color: var(--text-primary);
+}
+
+.weekly-picks {
+  padding: 5.75rem 0;
+}
+.weekly-picks__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.weekly-picks__title {
+  flex: 0 0 540px;
+}
+
+.weekly-picks__grid {
+  display: flex;
+  gap: 1.85rem;
+}
+
+.card {
+  flex: 0 0 410px;
+  border-radius: 1rem;
+  background: var(--bg-card);
+  border-top: 1px solid var(--accent);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem;
+  box-shadow: 0 9px 50px 0 rgb(23 36 65 / 0.04);
+
+  transition:
+    transform var(--transition-normal),
+    background-color var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-2px) scale(1.02);
+  background-color: var(--bg-card-hover);
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card__content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card__title {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.card__price {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.card__price::before,
+.card__time::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+}
+
+.card__price::before {
+  margin-right: 0.25rem;
+  background-image: url(../img/price_icon.svg);
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card__time-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card__caption {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-gray);
+  margin-bottom: 0.25rem;
+}
+
+.card__time {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.card__time::before {
+  margin-right: 0.75rem;
+  background-image: url(../img/clock.svg);
+}
+
+.card__button {
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  background-color: transparent;
+}
+
+.card__button:hover {
+  transform: scale(1.03); /* Чуть меньше, чем у основной */
+  box-shadow: 0 0 12px var(--accent);
   color: var(--text-primary);
 }
