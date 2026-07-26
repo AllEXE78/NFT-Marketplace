@@ -185,12 +185,6 @@ body {
   z-index: 100;
 }
 
-.hero__media {
-  flex: 0 0 575px;
-  position: relative;
-  z-index: 100;
-}
-
 .hero__title {
   font-size: 4rem;
 }
@@ -269,6 +263,7 @@ body {
   position: relative;
   z-index: 10;
   display: flex;
+  flex: 0 0 575px;
   align-items: flex-start;
   justify-content: center;
   width: 575px;
@@ -532,7 +527,7 @@ body {
     justify-content: center;
   }
 
-  .card:nth-child(3) {
+  .weekly-picks__card:nth-child(3) {
     grid-column: 1 / -1;
     justify-self: center;
     width: 410px;
@@ -564,12 +559,12 @@ body {
     justify-items: center;
   }
 
-  .card {
+  .weekly-picks__card {
     max-width: 410px;
     width: 100%;
   }
 
-  .card:nth-child(3) {
+  .weekly-picks__card:nth-child(3) {
     grid-column: auto;
     justify-self: auto;
     width: auto;
