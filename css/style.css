@@ -110,6 +110,7 @@ body {
   text-decoration: none;
   text-transform: capitalize;
   text-align: center;
+  white-space: nowrap;
 
   transition:
     transform var(--transition-fast),
@@ -605,6 +606,20 @@ body {
 }
 
 @media (max-width: 1100px) {
+  .weekly-picks__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .weekly-picks__title {
+    text-align: center;
+    flex: 0 0 100%;
+    max-width: 700px;
+  }
+
   .weekly-picks__grid {
     grid-template-columns: repeat(2, 410px);
     justify-content: center;
@@ -618,24 +633,6 @@ body {
 }
 
 @media (max-width: 900px) {
-  .weekly-picks__header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 4rem;
-  }
-
-  .weekly-picks__title {
-    text-align: center;
-    flex: 0 0 0;
-  }
-
-  .weekly-picks__button {
-    max-width: 410px;
-    width: 100%;
-  }
-
   .weekly-picks__grid {
     grid-template-columns: 1fr;
     justify-content: center;
@@ -711,7 +708,6 @@ body {
   .button {
     font-size: 0.9rem;
     padding: 0.6rem 1.5rem;
-    white-space: nowrap;
   }
 }
 
@@ -724,6 +720,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 }
 .create__content {
   max-width: 430px;
@@ -745,7 +742,8 @@ body {
 
 .create__image-wrapper {
   position: relative;
-  width: 740px;
+  width: 100%;
+  max-width: 740px;
   height: 560px;
 }
 .create__image {
@@ -754,8 +752,11 @@ body {
 }
 .create__image--primary {
   z-index: 2;
-  right: 330px;
-  top: 159px;
+
+  left: 0;
+  top: 28.39%;
+  /* right: 330px; */
+  /* top: 159px; */
   width: 410px;
   height: 400px;
 }
@@ -765,4 +766,54 @@ body {
   right: 0;
   width: 410px;
   height: 470px;
+}
+
+@media (max-width: 1100px) {
+  .create__container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .create__content {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+  }
+
+  .create__actions {
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .create {
+    padding: 2em 0;
+  }
+
+  .create__image-wrapper {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .create__image {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+  }
+
+  .create__image--primary,
+  .create__image--secondary {
+    z-index: auto;
+    right: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+  }
 }
