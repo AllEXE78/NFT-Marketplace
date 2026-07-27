@@ -54,7 +54,7 @@
 }
 
 html {
-  font-size: 16 px;
+  font-size: 16px;
 }
 
 body {
@@ -234,7 +234,7 @@ body {
 .link {
   display: inline-block;
   font-family: var(--first-family);
-  font-style: 1rem;
+  font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
   color: var(--text-primary);
@@ -320,9 +320,6 @@ body {
   color: var(--accent);
   border: 1px solid #d6ef0e;
   background-color: transparent;
-}
-
-.button--card {
   transition:
     transform var(--transition-fast),
     box-shadow var(--transition-fast),
@@ -385,8 +382,7 @@ body {
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
-    /* opacity: 0.1; */
+    height: 100%;    
     overflow: hidden;
     filter: brightness(30%);
   }
