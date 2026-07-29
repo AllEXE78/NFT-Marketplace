@@ -788,7 +788,7 @@ body {
 
 @media (max-width: 700px) {
   .create {
-    padding: 2em 0;
+    padding: 2rem 0;
   }
 
   .create__image-wrapper {
@@ -921,19 +921,19 @@ body {
 }
 
 /* Image corrections */
-.artists__card:nth-child(2) .artists__card-image {
+.c2 .artists__card-image {
   object-position: 0 15%;
 }
 
-.artists__card:nth-child(3) .artists__card-image {
-  object-position: 40% bottom;
+.c3 .artists__card-image {
+  object-position: 40% 5%;
 }
 
-.artists__card:nth-child(4) .artists__card-image {
+.c4 .artists__card-image {
   object-position: 0 25%;
 }
 
-.artists__card:nth-child(5) .artists__card-image {
+.c5 .artists__card-image {
   object-position: 0 25%;
 }
 
@@ -976,9 +976,17 @@ body {
     grid-column: 5 / 9;
     grid-row: 3 / 4;
   }
+
+  .c3 .artists__card-image {
+    object-position: 5% 20%;
+  }
 }
 
 @media (max-width: 700px) {
+  .artists {
+    padding: 2rem 0;
+  }
+
   .artists__grid {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -1007,5 +1015,114 @@ body {
   }
   .c5 {
     aspect-ratio: 410 / 311;
+  }
+}
+
+/* section subscribe */
+
+.subscribe {
+  padding: 5.75rem 0;
+}
+
+.subscribe__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.subscribe__collage {
+  position: relative;
+  z-index: 10;
+  max-width: 630px;
+  width: 100%;
+  aspect-ratio: 630 / 458;
+}
+.subscribe__image {
+  position: absolute;
+  /* inset: 0; */
+  border-radius: 1.25rem;
+  object-fit: cover;
+}
+.collage-pic-01 {
+  z-index: 1;
+  width: 65%;
+  height: 80%;
+  top: 8%;
+  left: 3.5%;
+  transform: rotate(-11.19deg);
+}
+.collage-pic-02 {
+  z-index: 2;
+  width: 45%;
+  height: 75%;
+  bottom: 0;
+  right: 0;
+}
+.subscribe__info {
+  max-width: 520px;
+  width: 100%;
+}
+.section-title {
+  margin-bottom: 1.25rem;
+}
+
+.subscribe__text {
+  margin-bottom: 2.5rem;
+}
+.subscribe__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.25rem 0.25rem 1.5rem;
+  background-color: var(--bg-card);
+}
+.subscribe__input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font: inherit;
+}
+
+@media (max-width: 1000px) {
+  .subscribe__wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .subscribe__info {
+    max-width: 650px;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+  .subscribe__text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .subscribe__wrapper {
+    gap: 0.5rem;
+  }
+
+  .subscribe__text {
+    margin-bottom: 1rem;
+  }
+  .subscribe__form {
+    flex-direction: column;
+    border-radius: 0;
+    padding: 1rem;
+    background-color: transparent;
+  }
+
+  .subscribe__input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-card);
   }
 }
