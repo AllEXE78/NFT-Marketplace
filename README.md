@@ -38,4 +38,6 @@
 Откройте `index.html` в браузере или перейдите по ссылке:  
 [https://allexe78.github.io/NFT-Marketplace/](https://allexe78.github.io/NFT-Marketplace/)
 
+Или наведите телефон на QR-код ниже
+
 ---
